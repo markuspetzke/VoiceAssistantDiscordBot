@@ -6,12 +6,9 @@ import os
 
 config = ConfigParser()
 path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
-config.read(os.path.join(path, 'conf.ini'))
+config.read(os.path.join(path, 'config.ini'))
 
 token = config['auth']['token']
-
-with open ('config.json') as config_file:
-    data = json.load(config_file)
 
 client = discord.Client()
 
@@ -27,4 +24,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run(data[token])
+client.run(token)
