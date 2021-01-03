@@ -6,7 +6,7 @@ import os
 
 config = ConfigParser()
 path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
-config.read(os.path.join(path, 'config.ini'))
+config.read(os.path.join(path, 'conf.ini'))
 
 token = config['auth']['token']
 
