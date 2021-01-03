@@ -8,7 +8,7 @@ config = ConfigParser()
 path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
 config.read(os.path.join(path, 'config.ini'))
 
-toekn = config['auth']['token']
+token = config['auth']['token']
 
 with open ('config.json') as config_file:
     data = json.load(config_file)
@@ -27,4 +27,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run(data['Token'])
+client.run(data[token])
