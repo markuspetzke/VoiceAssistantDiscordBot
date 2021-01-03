@@ -1,5 +1,14 @@
 import discord
 import json
+from configparser import ConfigParser
+import os
+
+
+config = ConfigParser()
+path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
+config.read(os.path.join(path, 'config.ini'))
+
+toekn = config['auth']['token']
 
 with open ('config.json') as config_file:
     data = json.load(config_file)
