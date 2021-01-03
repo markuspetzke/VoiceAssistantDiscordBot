@@ -12,6 +12,7 @@ __pycache__/
 
 #config.ini
 *.ini
+config.ini
 # C extensions
 *.so
 
